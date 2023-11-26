@@ -2,3 +2,32 @@ GET http://localhost:3000/
 
 ### 
 GET http://localhost:3000/tweet
+
+###
+GET http://localhost:3000/user
+
+###
+GET http://localhost:3000/user/2
+
+###
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john@doe.com",
+    "username": "johndoe"
+}
+
+###
+PUT http://localhost:3000/user/5
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john@doe.com",
+    "username": "johndoe (updated)"
+}
+
+###
+DELETE http://localhost:3000/user/2
