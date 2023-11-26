@@ -36,6 +36,9 @@ router.get('/:id', async (req, res) => {
     where: {
       id: Number(id),
     },
+    include: {
+      tweets: true
+    }
   });
   res.send(user);
 });
