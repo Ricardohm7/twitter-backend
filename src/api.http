@@ -31,3 +31,32 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3000/user/2
+
+
+### tweet
+### create
+POST http://localhost:3000/tweet
+Content-Type: application/json
+
+{
+    "content": "Hello World again",
+    "userId": 1
+}
+
+### list all
+GET http://localhost:3000/tweet
+
+### list by id
+GET http://localhost:3000/tweet/10
+
+### update
+PUT http://localhost:3000/tweet/2
+Content-Type: application/json
+
+{
+    "content": "Hello World again (updated)",
+    "userId": 1
+}
+
+### delete
+DELETE http://localhost:3000/tweet/2

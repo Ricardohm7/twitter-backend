@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
         bio: "Hellow, I'm new on Twitter!"
       },
     });
-    res.json(user);
+    res.send(user);
   } catch (error) {
     res.status(400).json({ message: 'Username and email should be unique' });
   }
@@ -26,8 +26,7 @@ router.post('/', async (req, res) => {
 //list users
 router.get('/', async (req, res) => {
   const allUsers = await prisma.user.findMany();
-  // res.status(501).json({ message: 'Not implemented' });
-  res.json(allUsers);
+  res.send(allUsers);
 });
 
 //get one user
@@ -38,7 +37,7 @@ router.get('/:id', async (req, res) => {
       id: Number(id),
     },
   });
-  res.json(user);
+  res.send(user);
 });
 
 //update user
@@ -57,7 +56,7 @@ router.put('/:id', async (req, res) => {
         bio
       },
     });
-    res.json(user);
+    res.send(user);
   } catch (error) {
     res.status(400).json({ message: error.meta.cause });
   }
@@ -72,7 +71,7 @@ router.delete('/:id', async (req, res) => {
         id: Number(id),
       },
     });
-    res.json(user);
+    res.send(user);
   } catch (error) {
     res.status(400).json({ message: error.meta.cause });
   }
